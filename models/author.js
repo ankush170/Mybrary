@@ -14,7 +14,7 @@ authorSchema.pre("deleteOne", async function (next) {
       const hasBook = await Book.exists({ author: query._id });
 
       if (hasBook) {
-          next(new Error("This author still has books."));
+        next(new Error("This author still has books."));
       } else {
           next();
       }
