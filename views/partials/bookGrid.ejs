@@ -1,9 +1,29 @@
 <% bookCoverClass = locals.large ? 'book-cover-large' : '' %>
 <% bookGridClass = locals.large ? 'book-grid-large' : '' %>
-<div class="book-grid <%= bookGridClass %>">
+<div class="book-container <%= bookGridClass %>">
   <% books.forEach(book => { %>
-    <a href="/books/<%= book.id %>">
-      <img class="book-cover <%= bookCoverClass %>" src="<%= book.coverImagePath %>">
-    </a>
+  <div style="padding: 20px; width: 325px">
+    <div class="book">
+      <a href="/books/<%= book.id %>">
+        <img class="book-cover <%= bookCoverClass %>" src="<%= book.coverImagePath %>">
+      </a>
+    </div>
+    <h2 class="book-title"><%= book.title %></h2>
+    <p class="description"><%= book.description %></p>
+    <div class="book-date"><%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %></div>
+  </div>
   <% }) %>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const descriptions = document.querySelectorAll(".description");
+    descriptions.forEach(description => {
+      const words = description.textContent.split(" ");
+      if (words.length > 10) {
+        const truncatedDescription = words.slice(0, 10).join(" ") + "...";
+        description.textContent = truncatedDescription;
+      }
+    });
+  });
+</script>
