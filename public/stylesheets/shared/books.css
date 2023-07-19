@@ -1,5 +1,5 @@
 :root {
-    --book-cover-width: 325px;
+    --book-cover-width: 200px;
     --book-cover-width-large: 325px;
     --book-cover-aspect-ratio: 0.75;
 }
@@ -63,12 +63,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px; 
+    padding: 20px;
     /* width: 800px;  */
 }
 
 .book {
     /* border: 1px solid #ccc; */
-    text-align: center;
+    /* text-align: center; */
   }
 
 .book-title {

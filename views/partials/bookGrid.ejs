@@ -2,7 +2,7 @@
 <% bookGridClass = locals.large ? 'book-grid-large' : '' %>
 <div class="book-container <%= bookGridClass %>">
   <% books.forEach(book => { %>
-  <div style="padding: 20px; width: 325px">
+  <div style="padding: 20px; width: 30%">
     <div class="book">
       <a href="/books/<%= book.id %>">
         <img class="book-cover <%= bookCoverClass %>" src="<%= book.coverImagePath %>">
