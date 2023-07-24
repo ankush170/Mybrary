@@ -58,3 +58,39 @@
     grid-area: author;
     justify-self: stretch;
 }
+
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    padding: 20px;
+    /* width: 800px;  */
+}
+
+.book {
+    /* border: 1px solid #ccc; */
+    /* text-align: center; */
+  }
+
+.book-title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 14px;
+    margin: 5px 0;
+    line-height: 1.4;
+    max-height: 4.8em; 
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical; */
+}
+
+.book-date {
+    font-size: 12px;
+    margin-top: 20px;
+    font-style: italic;
+}

@@ -7,7 +7,7 @@
     <label>Author</label>
     <select name="author">
       <% authors.forEach(author => { %>
-        <% if (author.id === book.author) { %>
+        <% if (`${author.id}` === `${book.author}`) { %>
           <option selected label="<%= author.name %>" value="<%= author.id %>">
         <% } else { %>
           <option label="<%= author.name %>" value="<%= author.id %>">
@@ -30,10 +30,12 @@
 </div>
 
 <div class="form-row">
-  <div class="form-item form-item-no-grow">
+  <div class="form-item form-item-no-grow" id="imageContainer">
     <label>Cover</label>
     <input type="file" name="cover" class="book-cover filepond">
   </div>
+  
+
   <div class="form-item">
     <label>Description</label>
     <textarea name="description"><%= book.description %></textarea>
